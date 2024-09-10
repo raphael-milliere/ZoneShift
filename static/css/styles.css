@@ -1,0 +1,222 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --background-color: #f4f6f9;
+    --text-color: #333;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode {
+    --primary-color: #4db6e8;
+    --secondary-color: #a0b6cc;
+    --background-color: #1a1a1a;
+    --text-color: #f0f0f0;
+    --box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+}
+
+.dark-mode .container {
+    background-color: #2a2a2a;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    color: var(--secondary-color);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+h2 {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+#dark-mode-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+#dark-mode-toggle .sun {
+    display: none;
+}
+
+.dark-mode #dark-mode-toggle .moon {
+    display: none;
+}
+
+.dark-mode #dark-mode-toggle .sun {
+    display: inline;
+}
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+select, input[type="date"], input[type="time"] {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.dark-mode select, .dark-mode input[type="date"], .dark-mode input[type="time"] {
+    background-color: #3a3a3a;
+    color: var(--text-color);
+    border-color: #555;
+}
+
+select:focus, input[type="date"]:focus, input[type="time"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.dark-mode button:hover {
+    background-color: #3a8bc2;
+}
+
+#results {
+    margin-top: 2rem;
+}
+
+#snapshot-view, #annual-time-shifts {
+    margin-bottom: 2rem;
+}
+
+.result-item, .yearly-result-item {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 1rem;
+}
+
+.dark-mode .result-item, .dark-mode .yearly-result-item {
+    background-color: #3a3a3a;
+}
+
+.result-item h3, .yearly-result-item h3 {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.yearly-result-item ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.yearly-result-item li {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+    font-size: 0.9rem;
+}
+
+.dark-mode .yearly-result-item li {
+    background-color: #2a2a2a;
+}
+
+@media (min-width: 768px) {
+    .input-section {
+        flex-direction: row;
+        align-items: flex-end;
+    }
+
+    .input-group {
+        flex: 1;
+    }
+
+    button {
+        align-self: flex-end;
+        width: auto;
+        padding: 0.5rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+}

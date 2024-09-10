@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZoneShift</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.33/moment-timezone-with-data.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ZoneShift</h1>
+            <button id="dark-mode-toggle" aria-label="Toggle dark mode">
+                <span class="moon">🌙</span>
+                <span class="sun">☀️</span>
+            </button>
+        </div>
+        <form class="input-section">
+            <div class="input-group">
+                <label for="reference-location">Reference Location</label>
+                <select id="reference-location">
+                    <option value="Australia/Sydney">Sydney, Australia</option>
+                    <option value="America/New_York">New York, USA</option>
+                    <option value="America/Los_Angeles">San Francisco, USA</option>
+                    <option value="Europe/London">London, UK</option>
+                    <option value="Europe/Paris">Paris, France</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="reference-date">Date</label>
+                <input type="date" id="reference-date">
+            </div>
+            <div class="input-group">
+                <label for="reference-time">Time</label>
+                <input type="time" id="reference-time">
+            </div>
+            <button type="button" id="convert-btn">Convert</button>
+        </form>
+        <div id="results">
+            <div id="snapshot-view"></div>
+            <div id="annual-time-shifts"></div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
